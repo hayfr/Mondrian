@@ -1,0 +1,49 @@
+/* RESET BODY */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: white;
+}
+
+/* NAVBAR STYLE */
+nav {
+  background-color: #000;
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+  position: relative;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+/* MONDRIAN GRID */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  width: 600px;
+  height: 600px;
+  gap: 5px;
+  padding: 5px;
+  margin: 20px auto;
+  background-color: black;
+  box-sizing: border-box;
+}
+
+/* COLOR OR IMAGE BLOCKS */
+.grid-item {
+  border: 5px solid black;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.bg-img {
+  background-size: cover;
+  background-position: center;
+}
