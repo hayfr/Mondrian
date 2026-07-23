@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <nav>
+    <a href="index2.html">View Cat Version</a>
+  </nav>
   <div class="grid-container">
     <div class="grid-item" style="background-color: red; grid-column: 1 / span 1; grid-row: 1 / span 1;"></div>
     <div class="grid-item" style="background-color: white; grid-column: 1 / span 1; grid-row: 2 / span 1;"></div>
@@ -21,40 +24,6 @@
     <div class="grid-item" style="background-color: yellow; grid-column: 3 / span 2; grid-row: 5 / span 2;"></div>
     <div class="grid-item" style="background-color: red; grid-column: 6 / span 1; grid-row: 6 / span 1;"></div>
   </div>
-
-<script>
-  const catImages = [
-    'url("https://placecats.com/300/300")',
-    'url("https://placecats.com/400/300")',
-    'url("https://placecats.com/300/400")'
-  ];
-
-  const gridItems = document.querySelectorAll('.grid-item');
-
-  gridItems.forEach(item => {
-    item.dataset.catIndex = -1;
-
-    item.addEventListener('click', function() {
-      let currentIndex = parseInt(this.dataset.catIndex);
-      currentIndex++;
-
-      if (currentIndex >= catImages.length) {
-        // Remove the image
-        this.style.backgroundImage = '';
-        this.dataset.catIndex = -1;
-      } else {
-        // Swap to the new cat image
-        this.style.backgroundImage = catImages[currentIndex];
-        
-        // Force the image formatting directly via JavaScript
-        this.style.backgroundSize = 'contain';
-        this.style.backgroundRepeat = 'no-repeat';
-        this.style.backgroundPosition = 'center';
-        
-        this.dataset.catIndex = currentIndex;
-      }
-    });
-  });
-</script>
 </body>
-</html>
+</html> 
+
