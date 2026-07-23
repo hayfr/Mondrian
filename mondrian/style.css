@@ -4,6 +4,8 @@ body {
   background-color: white;
 }
 
+
+
 nav {
   background-color: #000;
   width: 100%;
@@ -12,6 +14,8 @@ nav {
   position: relative;
 }
 
+
+
 nav a {
   color: white;
   text-decoration: none;
@@ -19,6 +23,8 @@ nav a {
   font-weight: bold;
   padding: 10px 20px;
 }
+
+
 
 .grid-container {
   display: grid;
@@ -33,23 +39,18 @@ nav a {
   box-sizing: border-box;
 }
 
+
+
 .grid-item {
   border: 5px solid black;
   box-sizing: border-box;
   background-color: white;
-  
-  /* New hover properties */
-  cursor: pointer; 
-  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-/* This triggers when the mouse is over the box */
-.grid-item:hover {
-  transform: scale(0.97); /* Shrinks the box slightly to create a physical press effect */
-  filter: brightness(0.85); /* Darkens the box slightly */
-}
+
+
 .bg-img {
-  background-size: contain; /* Scales the image so the whole thing fits inside the box */
-  background-repeat: no-repeat; /* Prevents the image from tiling to fill empty space */
-  background-position: center; /* Keeps the cat perfectly centered */
-}
+  background-size: cover;
+  background-position: center;
+} 
+
