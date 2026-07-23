@@ -48,3 +48,8 @@ nav a {
   transform: scale(0.97); /* Shrinks the box slightly to create a physical press effect */
   filter: brightness(0.85); /* Darkens the box slightly */
 }
+.bg-img {
+  background-size: contain; /* Scales the image so the whole thing fits inside the box */
+  background-repeat: no-repeat; /* Prevents the image from tiling to fill empty space */
+  background-position: center; /* Keeps the cat perfectly centered */
+}
