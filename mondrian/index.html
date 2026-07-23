@@ -32,25 +32,25 @@
   const gridItems = document.querySelectorAll('.grid-item');
 
   gridItems.forEach(item => {
-    // Set a custom tracker on each box starting at -1 (meaning no cat)
     item.dataset.catIndex = -1;
 
     item.addEventListener('click', function() {
-      // Figure out which cat we are currently on
       let currentIndex = parseInt(this.dataset.catIndex);
-      
-      // Move to the next image
       currentIndex++;
 
-      // If we've cycled through all the cats, reset to the original color
       if (currentIndex >= catImages.length) {
+        // Remove the image
         this.style.backgroundImage = '';
-        this.classList.remove('bg-img');
         this.dataset.catIndex = -1;
       } else {
         // Swap to the new cat image
         this.style.backgroundImage = catImages[currentIndex];
-        this.classList.add('bg-img');
+        
+        // Force the image formatting directly via JavaScript
+        this.style.backgroundSize = 'contain';
+        this.style.backgroundRepeat = 'no-repeat';
+        this.style.backgroundPosition = 'center';
+        
         this.dataset.catIndex = currentIndex;
       }
     });
