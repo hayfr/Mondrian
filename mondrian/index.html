@@ -22,35 +22,39 @@
     <div class="grid-item" style="background-color: red; grid-column: 6 / span 1; grid-row: 6 / span 1;"></div>
   </div>
 
-  <script>
-    // Replace these URLs with the file paths to your actual cat images 
-    // (e.g., 'url("images/cat1.jpg")')
-    const catImages = [
-      'url("https://placecats.com/300/300")',
-      'url("https://placecats.com/400/300")',
-      'url("https://placecats.com/300/400")'
-    ];
+<script>
+  const catImages = [
+    'url("https://placecats.com/300/300")',
+    'url("https://placecats.com/400/300")',
+    'url("https://placecats.com/300/400")'
+  ];
 
-    // Grab all the grid boxes
-    const gridItems = document.querySelectorAll('.grid-item');
+  const gridItems = document.querySelectorAll('.grid-item');
 
-    // Attach a click event to each box
-    gridItems.forEach(item => {
-      item.addEventListener('click', function() {
-        // If the box already has a background image, remove it to show the color again
-        if (this.style.backgroundImage) {
-          this.style.backgroundImage = '';
-          this.classList.remove('bg-img');
-        } else {
-          // Otherwise, pick a random cat from the array
-          const randomCat = catImages[Math.floor(Math.random() * catImages.length)];
-          
-          // Apply the cat image and add your CSS class so it fits perfectly
-          this.style.backgroundImage = randomCat;
-          this.classList.add('bg-img');
-        }
-      });
+  gridItems.forEach(item => {
+    // Set a custom tracker on each box starting at -1 (meaning no cat)
+    item.dataset.catIndex = -1;
+
+    item.addEventListener('click', function() {
+      // Figure out which cat we are currently on
+      let currentIndex = parseInt(this.dataset.catIndex);
+      
+      // Move to the next image
+      currentIndex++;
+
+      // If we've cycled through all the cats, reset to the original color
+      if (currentIndex >= catImages.length) {
+        this.style.backgroundImage = '';
+        this.classList.remove('bg-img');
+        this.dataset.catIndex = -1;
+      } else {
+        // Swap to the new cat image
+        this.style.backgroundImage = catImages[currentIndex];
+        this.classList.add('bg-img');
+        this.dataset.catIndex = currentIndex;
+      }
     });
-  </script>
+  });
+</script>
 </body>
 </html>
