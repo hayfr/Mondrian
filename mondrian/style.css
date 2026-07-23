@@ -37,17 +37,6 @@ nav a {
   border: 5px solid black;
   box-sizing: border-box;
   background-color: white;
-}
-
-.bg-img {
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-item {
-  border: 5px solid black;
-  box-sizing: border-box;
-  background-color: white;
   
   /* New hover properties */
   cursor: pointer; 
