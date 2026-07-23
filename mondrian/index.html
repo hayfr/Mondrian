@@ -7,9 +7,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav>
-    <a href="index2.html">View Cat Version</a>
-  </nav>
   <div class="grid-container">
     <div class="grid-item" style="background-color: red; grid-column: 1 / span 1; grid-row: 1 / span 1;"></div>
     <div class="grid-item" style="background-color: white; grid-column: 1 / span 1; grid-row: 2 / span 1;"></div>
@@ -24,5 +21,36 @@
     <div class="grid-item" style="background-color: yellow; grid-column: 3 / span 2; grid-row: 5 / span 2;"></div>
     <div class="grid-item" style="background-color: red; grid-column: 6 / span 1; grid-row: 6 / span 1;"></div>
   </div>
+
+  <script>
+    // Replace these URLs with the file paths to your actual cat images 
+    // (e.g., 'url("images/cat1.jpg")')
+    const catImages = [
+      'url("https://placecats.com/300/300")',
+      'url("https://placecats.com/400/300")',
+      'url("https://placecats.com/300/400")'
+    ];
+
+    // Grab all the grid boxes
+    const gridItems = document.querySelectorAll('.grid-item');
+
+    // Attach a click event to each box
+    gridItems.forEach(item => {
+      item.addEventListener('click', function() {
+        // If the box already has a background image, remove it to show the color again
+        if (this.style.backgroundImage) {
+          this.style.backgroundImage = '';
+          this.classList.remove('bg-img');
+        } else {
+          // Otherwise, pick a random cat from the array
+          const randomCat = catImages[Math.floor(Math.random() * catImages.length)];
+          
+          // Apply the cat image and add your CSS class so it fits perfectly
+          this.style.backgroundImage = randomCat;
+          this.classList.add('bg-img');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
